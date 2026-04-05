@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.expo/
+dist/
+build/
+*.log
+backend/data/
+*.zip
+
+# Environment
+.env
+
+# MacOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local config
+local.properties
+.DS_Store
+*.apk
+*.ipa

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELO_KINETIC | Scan QR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#20201f",
+              "secondary-dim": "#d6d4d3",
+              "error-dim": "#d7383b",
+              "inverse-on-surface": "#565555",
+              "error-container": "#9f0519",
+              "tertiary-fixed": "#11d8ff",
+              "on-secondary-container": "#d2d0cf",
+              "on-primary": "#006437",
+              "background": "#0e0e0e",
+              "on-tertiary-container": "#004755",
+              "inverse-surface": "#fcf9f8",
+              "on-primary-fixed": "#004624",
+              "secondary-container": "#474747",
+              "on-primary-container": "#005b31",
+              "on-surface-variant": "#adaaaa",
+              "surface": "#0e0e0e",
+              "primary-fixed": "#00fd93",
+              "surface-container-highest": "#262626",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-error-container": "#ffa8a3",
+              "secondary": "#e4e2e1",
+              "primary-container": "#00fd93",
+              "outline-variant": "#484847",
+              "tertiary": "#7be2ff",
+              "surface-container": "#1a1a1a",
+              "primary-dim": "#00ed89",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#00caee",
+              "surface-bright": "#2c2c2c",
+              "on-secondary": "#525151",
+              "surface-dim": "#0e0e0e",
+              "inverse-primary": "#006e3c",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed": "#00313c",
+              "primary-fixed-dim": "#00ed89",
+              "surface-tint": "#a2ffbf",
+              "surface-variant": "#262626",
+              "surface-container-low": "#131313",
+              "secondary-fixed-dim": "#d6d4d3",
+              "secondary-fixed": "#e4e2e1",
+              "on-error": "#490006",
+              "error": "#ff716c",
+              "on-secondary-fixed": "#3f3f3f",
+              "primary": "#a2ffbf",
+              "on-tertiary-fixed-variant": "#005160",
+              "on-primary-fixed-variant": "#006638",
+              "tertiary-fixed-dim": "#00caee",
+              "tertiary-container": "#11d8ff",
+              "on-surface": "#ffffff",
+              "on-tertiary": "#005160",
+              "outline": "#767575"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanner-overlay {
+            background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(162, 255, 191, 0.1) 50%, transparent 51%);
+            background-size: 100% 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#00FF94] hover:bg-[#20201f] transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-black text-[#00FF94] tracking-[-0.04em] font-['Manrope'] uppercase">VELO_KINETIC</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden active:scale-95 transition-transform">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close up of a person's face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNLpgt07Yt7uBwqfZ1BSTG4qvjAq3mlY48p_N2bPsk1AbW4oP6xKipuK7f2nzfTXBv5Dz0lNf-yNQ--xRMNXX6UbLEoNUPWP-ilToJk_RHNpfVhBQNufntqqIqaWhMjF7K1cLK8gdFnoXecWA_LQKPc0njVK6zxsGoQnmjrGRNmTNXWSZFOcJGwgPx9ox8Y0lxvc_oZtKwVT7oBY3smEEyX1GXs15UPahPnAFEciuTwbVagbHtUoQQEGt7vOnduHYuW1u-a3n8VjWn"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 flex flex-col items-center min-h-screen">
+<!-- Viewfinder Section -->
+<div class="w-full max-w-md aspect-[3/4] relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-[0_20px_40px_rgba(162,255,191,0.08)]">
+<!-- Simulated Camera Feed -->
+<div class="absolute inset-0 grayscale opacity-40 mix-blend-lighten" data-alt="Blurry overhead view of a bicycle handlebar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlP0K1FeO9s71_ZrD6vXVJLLPRnci66a25GygjMTM_fuTtlQaCr73guNBRCAc1ZIhwlHjR9YoUNj0Zw8WLKhc4EJTiYTs8qSKTLjio6BtZDprtrzBpaolajmTshAkLbIsstmZgEqWu5Rw0cx_P6l6qIkGnPtdJuQNAcfF8j3RlS6yKfdv_2f3IKIplDjcnwGGhd3rexthHXIO6UOPXtx7r3z3-Lbzu1ZCmFOLvY8lZTF1LMmp3UbjxHq4tVgxdYEyjoh8JRaKDdQHt'); background-size: cover; background-position: center;">
+</div>
+<!-- Scanner Frame Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative w-64 h-64">
+<!-- Corners -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
+<!-- Scanning Line -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary/40 shadow-[0_0_15px_rgba(162,255,191,0.8)] rounded-full animate-pulse"></div>
+<!-- Viewfinder Glow -->
+<div class="absolute inset-0 bg-primary/5 rounded-lg"></div>
+</div>
+</div>
+<!-- Bottom Flash Toggle -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container/80 backdrop-blur-md text-on-surface hover:bg-surface-container-high transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="flashlight_on">flashlight_on</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container/80 backdrop-blur-md text-on-surface hover:bg-surface-container-high transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="flip_camera_ios">flip_camera_ios</span>
+</button>
+</div>
+</div>
+<!-- Instructions Section -->
+<div class="mt-8 text-center space-y-4 max-w-sm">
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Scan Bike Anchor</h2>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                Align the QR code within the frame to automatically unlock the kinetic security hub.
+            </p>
+</div>
+<!-- Action Buttons -->
+<div class="mt-10 w-full max-w-md flex flex-col gap-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed py-5 rounded-full font-headline font-extrabold uppercase tracking-widest text-sm shadow-[0_10px_20px_rgba(0,253,147,0.15)] hover:scale-[1.02] active:scale-95 transition-all">
+                Scanning...
+            </button>
+<button class="w-full bg-surface-container-high text-on-surface border border-outline-variant/15 py-4 rounded-full font-label font-medium flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="keyboard">keyboard</span>
+                Enter ID Manually
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-center pb-8 z-50">
+<div class="bg-[#1a1a1a]/60 backdrop-blur-xl w-[90%] max-w-md rounded-full px-4 py-3 flex justify-between items-center shadow-[0_20px_40px_rgba(0,255,148,0.08)]">
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</button>
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="bg-[#00FF94] text-[#004624] rounded-full p-3 scale-110 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</button>
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</button>
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</body></html>

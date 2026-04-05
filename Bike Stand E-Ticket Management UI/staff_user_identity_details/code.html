@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELO_KINETIC | Account Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#20201f",
+              "secondary-dim": "#d6d4d3",
+              "error-dim": "#d7383b",
+              "inverse-on-surface": "#565555",
+              "error-container": "#9f0519",
+              "tertiary-fixed": "#11d8ff",
+              "on-secondary-container": "#d2d0cf",
+              "on-primary": "#006437",
+              "background": "#0e0e0e",
+              "on-tertiary-container": "#004755",
+              "inverse-surface": "#fcf9f8",
+              "on-primary-fixed": "#004624",
+              "secondary-container": "#474747",
+              "on-primary-container": "#005b31",
+              "on-surface-variant": "#adaaaa",
+              "surface": "#0e0e0e",
+              "primary-fixed": "#00fd93",
+              "surface-container-highest": "#262626",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-error-container": "#ffa8a3",
+              "secondary": "#e4e2e1",
+              "primary-container": "#00fd93",
+              "outline-variant": "#484847",
+              "tertiary": "#7be2ff",
+              "surface-container": "#1a1a1a",
+              "primary-dim": "#00ed89",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#00caee",
+              "surface-bright": "#2c2c2c",
+              "on-secondary": "#525151",
+              "surface-dim": "#0e0e0e",
+              "inverse-primary": "#006e3c",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed": "#00313c",
+              "primary-fixed-dim": "#00ed89",
+              "surface-tint": "#a2ffbf",
+              "surface-variant": "#262626",
+              "surface-container-low": "#131313",
+              "secondary-fixed-dim": "#d6d4d3",
+              "secondary-fixed": "#e4e2e1",
+              "on-error": "#490006",
+              "error": "#ff716c",
+              "on-secondary-fixed": "#3f3f3f",
+              "primary": "#a2ffbf",
+              "on-tertiary-fixed-variant": "#005160",
+              "on-primary-fixed-variant": "#006638",
+              "tertiary-fixed-dim": "#00caee",
+              "tertiary-container": "#11d8ff",
+              "on-surface": "#ffffff",
+              "on-tertiary": "#005160",
+              "outline": "#767575"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00FF94] cursor-pointer active:scale-95 transition-transform">menu</span>
+<span class="text-xl font-black text-[#00FF94] tracking-[-0.04em] font-['Manrope'] uppercase">VELO_KINETIC</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/15">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ7LGz0lG2uN9GPWgoNHgNCEKzL1H6iJCQYmp3jQxCdrhQSvaxErVBxAnOtydtwphfOBbPDbNp-Lf17U_p9NAh4h14AcfldW2PsX212A7B4Jke6db399g03bFdVbc0NfH8JVKs6URsYf2oCUJxojfdY0IxCm-2PvVcZXQtRH19v7iIlLrDyqbrEsCy452kQWws4VFKgFlY-SUrJoMAt3pEiUphmrWMGojpesBke4h5rrglqRL_jqiXxtnmbyYH9SCJdg4xL_JfjvX-"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Profile Hero Section -->
+<section class="mb-12">
+<div class="flex items-end justify-between mb-8">
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-widest font-headline block mb-2">Member Profile</span>
+<h1 class="text-4xl font-extrabold tracking-tighter font-headline">ALEXANDER VAN DER VELDE</h1>
+</div>
+</div>
+<!-- Identity Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Username/Email Field (Styled like Screen 15) -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-4">
+<div class="group">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Email Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant group-focus-within:text-primary transition-colors text-xl">alternate_email</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 pl-12 pr-4 text-on-surface font-semibold text-sm focus:ring-1 focus:ring-primary/30 transition-all outline-none" type="email" value="a.vander@kinetic.cc"/>
+</div>
+</div>
+</div>
+<!-- Password Field (Styled like Screen 15) -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-4">
+<div class="group">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Secure Password</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant group-focus-within:text-primary transition-colors text-xl">lock</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 pl-12 pr-12 text-on-surface font-semibold text-sm focus:ring-1 focus:ring-primary/30 transition-all outline-none" type="password" value="••••••••"/>
+<button class="absolute right-4 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Staff Identity Details (Conditional for Staff) -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col justify-between min-h-[120px]">
+<span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">Full Name (Identity)</span>
+<span class="text-lg font-bold tracking-tight">Alexander Van Der Velde</span>
+</div>
+<div class="bg-surface-container p-6 rounded-xl flex flex-col justify-between min-h-[120px]">
+<span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">Role</span>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-black font-headline text-primary tracking-tighter uppercase">Administrator</span>
+<div class="bg-primary/10 px-2 py-1 rounded-md">
+<span class="text-primary text-[10px] font-black uppercase">Staff</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Saved Vehicles Section -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold font-headline tracking-tight uppercase">Saved Vehicles</h2>
+<button class="text-primary text-sm font-bold flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                    ADD NEW
+                </button>
+</div>
+<div class="space-y-4">
+<!-- Vehicle Card 1 -->
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/5 flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">pedal_bike</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">S-Works Tarmac SL8</h3>
+<p class="text-on-surface-variant text-sm">Carbon Fiber • Racing Red</p>
+<p class="text-primary text-[10px] font-bold tracking-widest mt-1">VIN: VK-SL8-2024-99</p>
+</div>
+<div class="bg-primary/10 px-3 py-1 rounded-full">
+<span class="text-primary text-[10px] font-black uppercase">Primary</span>
+</div>
+</div>
+<!-- Vehicle Card 2 -->
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/5 flex items-center gap-6 opacity-60">
+<div class="w-16 h-16 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">electric_bolt</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">VanMoof S5</h3>
+<p class="text-on-surface-variant text-sm">Electric • Matte Black</p>
+<p class="text-on-surface-variant text-[10px] font-bold tracking-widest mt-1">VIN: VK-VM5-2023-14</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+</div>
+</section>
+<!-- Payment Methods Section -->
+<section class="mb-12">
+<h2 class="text-xl font-bold font-headline tracking-tight uppercase mb-6">Linked Payments</h2>
+<div class="bg-surface-container-high rounded-xl p-6 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="flex flex-col gap-6 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-highest px-3 py-2 rounded-lg border border-outline-variant/15">
+<span class="text-xs font-black tracking-widest text-secondary">VISA</span>
+</div>
+<div>
+<p class="font-bold">•••• 9012</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Expires 09/26</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<div class="h-px bg-outline-variant/10"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-on-background text-background px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-sm leading-none block">ios</span>
+</div>
+<div>
+<p class="font-bold">Apple Pay</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Default Mobile Payment</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="mb-12">
+<div class="bg-error-container/5 rounded-xl p-6 border border-error-container/10">
+<h3 class="text-error font-bold text-sm uppercase tracking-widest mb-4">Account Security</h3>
+<div class="flex flex-col gap-4">
+<button class="w-full text-left text-on-surface font-medium py-2 flex items-center justify-between border-b border-outline-variant/10">
+                        Sign out of all devices
+                        <span class="material-symbols-outlined text-on-surface-variant text-sm">logout</span>
+</button>
+<button class="w-full text-left text-error font-medium py-2 flex items-center justify-between">
+                        Delete kinetic account
+                        <span class="material-symbols-outlined text-error text-sm">delete_forever</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 w-full flex justify-center pb-8 z-50">
+<nav class="bg-[#1a1a1a]/60 backdrop-blur-xl w-[90%] max-w-md rounded-full px-4 py-3 flex justify-between items-center shadow-[0_20px_40px_rgba(0,255,148,0.08)]">
+<div class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<div class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</div>
+<div class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="bg-[#00FF94] text-[#004624] rounded-full p-3 scale-110 active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</nav>
+</div>
+</body></html>

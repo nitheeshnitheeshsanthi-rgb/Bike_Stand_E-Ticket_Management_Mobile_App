@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeoCycle Transit - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#525151",
+              "primary-fixed-dim": "#00ed89",
+              "surface-variant": "#262626",
+              "secondary-dim": "#d6d4d3",
+              "on-primary": "#006437",
+              "error": "#ff716c",
+              "tertiary-fixed": "#11d8ff",
+              "primary-fixed": "#00fd93",
+              "error-container": "#9f0519",
+              "tertiary-container": "#11d8ff",
+              "on-error-container": "#ffa8a3",
+              "secondary-fixed-dim": "#d6d4d3",
+              "surface-container": "#1a1a1a",
+              "surface-tint": "#a2ffbf",
+              "inverse-on-surface": "#565555",
+              "surface-container-lowest": "#000000",
+              "on-primary-container": "#005b31",
+              "primary-container": "#00fd93",
+              "inverse-primary": "#006e3c",
+              "on-tertiary-fixed-variant": "#005160",
+              "tertiary": "#7be2ff",
+              "on-surface": "#ffffff",
+              "tertiary-dim": "#00caee",
+              "surface-container-high": "#20201f",
+              "on-primary-fixed-variant": "#006638",
+              "on-tertiary-container": "#004755",
+              "surface-dim": "#0e0e0e",
+              "on-tertiary": "#005160",
+              "on-background": "#ffffff",
+              "on-surface-variant": "#adaaaa",
+              "surface-container-highest": "#262626",
+              "primary-dim": "#00ed89",
+              "on-secondary-container": "#d2d0cf",
+              "inverse-surface": "#fcf9f8",
+              "tertiary-fixed-dim": "#00caee",
+              "outline": "#767575",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-error": "#490006",
+              "surface-bright": "#2c2c2c",
+              "surface": "#0e0e0e",
+              "secondary-container": "#474747",
+              "background": "#0e0e0e",
+              "error-dim": "#d7383b",
+              "surface-container-low": "#131313",
+              "secondary": "#e4e2e1",
+              "on-tertiary-fixed": "#00313c",
+              "outline-variant": "#484847",
+              "on-secondary-fixed": "#3f3f3f",
+              "primary": "#a2ffbf",
+              "on-primary-fixed": "#004624",
+              "secondary-fixed": "#e4e2e1"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(162, 255, 191, 0.08);
+        }
+        .active-pulse {
+            position: relative;
+        }
+        .active-pulse::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #a2ffbf;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px #a2ffbf;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/10">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Portrait of Alex user profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyiJQXHpCCMhnrL943ZaAeIEZGBWbn00FcIfu2WSCQ4GEV2x5ksLR_8N4ESXcMuEIvTd9MI2_xqgNDl1RBni1cVLc-X9OJYyJDRV-fk4L-c9HAoiPA96BieZQYsWgmqelcIxbk4bGM2emV11gvf2CIPH5Qsm0BdltDWZzEGV4oUkq1Cd78wJj6mUlaPXHyP77Q8TxaAKj5YRTX1Q4AZdB8dunsDzhSwgEC1ZpQ47h_mE9K3-QtDVuWUIcuIIui1Z19qt2TtpJIgzFA"/>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label text-xs tracking-wider uppercase">Hello, Alex</span>
+<h1 class="font-headline font-black text-2xl tracking-tighter text-[#00FF94] leading-tight">KINETIC</h1>
+</div>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto space-y-8">
+<!-- Stats Bar -->
+<section class="flex gap-2">
+<div class="flex-1 bg-surface-container-low rounded-full py-3 px-5 flex items-center justify-between">
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-widest">Total Savings</span>
+<span class="font-headline font-bold text-primary">₹1,240</span>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-full py-3 px-5 flex items-center justify-between">
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-widest">CO2 Saved</span>
+<span class="font-headline font-bold text-tertiary">14.2kg</span>
+</div>
+</section>
+<!-- Active Session Card (The Ticket Primitive) -->
+<section class="relative">
+<div class="bg-surface-container-high rounded-xl p-8 editorial-shadow overflow-hidden relative">
+<!-- Kinetic Background Element -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="flex justify-between items-start mb-10">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="active-pulse w-3 h-3 block"></span>
+<span class="text-primary font-label text-xs font-semibold uppercase tracking-widest">Active Session</span>
+</div>
+<p class="text-on-surface-variant text-sm font-body">ID: NC-4920-881</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="qr_code_2">qr_code_2</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">Session Duration</span>
+<h2 class="font-headline font-bold text-5xl tracking-tighter text-on-surface">02h 14m</h2>
+</div>
+</div>
+<!-- Inset visual effect -->
+<div class="mx-8 h-4 bg-surface-container-highest/50 rounded-b-xl -mt-1"></div>
+</section>
+<!-- Quick Actions -->
+<section class="grid grid-cols-1 gap-4">
+<button class="bg-primary text-on-primary-fixed py-6 rounded-full font-headline font-extrabold text-lg flex items-center justify-center gap-3 active:scale-95 duration-200 transition-all">
+<span class="material-symbols-outlined" data-icon="local_parking" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_parking</span>
+                Park Vehicle
+            </button>
+<button class="bg-transparent border border-outline-variant/20 text-on-surface py-6 rounded-full font-headline font-extrabold text-lg flex items-center justify-center gap-3 active:scale-95 duration-200 transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Scan Exit
+            </button>
+</section>
+<!-- Nearby Stations (Editorial List) -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-2xl font-bold tracking-tight px-2">Nearby Stations</h3>
+<span class="text-primary font-label text-xs uppercase tracking-widest mb-1">View Map</span>
+</div>
+<div class="space-y-3">
+<!-- Station Card 1 -->
+<div class="bg-surface-container rounded-lg p-5 flex items-center justify-between group active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">North Hub Terminal</h4>
+<p class="text-on-surface-variant text-xs">200m away • Terminal B Entrance</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline font-black text-xl text-primary-fixed-dim">15</p>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant font-label">Slots</p>
+</div>
+</div>
+<!-- Station Card 2 -->
+<div class="bg-surface-container rounded-lg p-5 flex items-center justify-between group active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">East Gate Station</h4>
+<p class="text-on-surface-variant text-xs">450m away • Pedestrian Walkway</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline font-black text-xl text-error">4</p>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant font-label">Slots</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-4">
+<div class="bg-[#1a1a1a]/60 backdrop-blur-xl w-[90%] rounded-full flex justify-around items-center py-3 px-2 shadow-[0_20px_40px_rgba(162,255,191,0.08)]">
+<!-- Active: Home (speed) -->
+<a class="flex items-center justify-center bg-[#00FF94] text-[#004624] rounded-full p-3 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="speed" data-weight="fill" style="font-variation-settings: 'FILL' 1;">speed</span>
+</a>
+<a class="flex items-center justify-center text-[#adaaaa] p-3 hover:text-[#ffffff] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</a>
+<a class="flex items-center justify-center text-[#adaaaa] p-3 hover:text-[#ffffff] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</a>
+<a class="flex items-center justify-center text-[#adaaaa] p-3 hover:text-[#ffffff] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</div>
+</nav>
+</body></html>

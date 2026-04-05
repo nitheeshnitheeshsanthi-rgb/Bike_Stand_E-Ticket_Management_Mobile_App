@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#20201f",
+              "secondary-dim": "#d6d4d3",
+              "error-dim": "#d7383b",
+              "inverse-on-surface": "#565555",
+              "error-container": "#9f0519",
+              "tertiary-fixed": "#11d8ff",
+              "on-secondary-container": "#d2d0cf",
+              "on-primary": "#006437",
+              "background": "#0e0e0e",
+              "on-tertiary-container": "#004755",
+              "inverse-surface": "#fcf9f8",
+              "on-primary-fixed": "#004624",
+              "secondary-container": "#474747",
+              "on-primary-container": "#005b31",
+              "on-surface-variant": "#adaaaa",
+              "surface": "#0e0e0e",
+              "primary-fixed": "#00fd93",
+              "surface-container-highest": "#262626",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-error-container": "#ffa8a3",
+              "secondary": "#e4e2e1",
+              "primary-container": "#00fd93",
+              "outline-variant": "#484847",
+              "tertiary": "#7be2ff",
+              "surface-container": "#1a1a1a",
+              "primary-dim": "#00ed89",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#00caee",
+              "surface-bright": "#2c2c2c",
+              "on-secondary": "#525151",
+              "surface-dim": "#0e0e0e",
+              "inverse-primary": "#006e3c",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed": "#00313c",
+              "primary-fixed-dim": "#00ed89",
+              "surface-tint": "#a2ffbf",
+              "surface-variant": "#262626",
+              "surface-container-low": "#131313",
+              "secondary-fixed-dim": "#d6d4d3",
+              "secondary-fixed": "#e4e2e1",
+              "on-error": "#490006",
+              "error": "#ff716c",
+              "on-secondary-fixed": "#3f3f3f",
+              "primary": "#a2ffbf",
+              "on-tertiary-fixed-variant": "#005160",
+              "on-primary-fixed-variant": "#006638",
+              "tertiary-fixed-dim": "#00caee",
+              "tertiary-container": "#11d8ff",
+              "on-surface": "#ffffff",
+              "on-tertiary": "#005160",
+              "outline": "#767575"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #a2ffbf 0%, #00fd93 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00FF94] cursor-pointer active:scale-95 transition-transform" data-icon="menu">menu</span>
+<h1 class="font-['Manrope'] tracking-tighter uppercase font-bold text-xl font-black text-[#00FF94] tracking-[-0.04em]">VELO_KINETIC</h1>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="User Profile" data-alt="User profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiSDXmQZVUrzvK4vmCvnpYktNhlWQDIgCg0PVdBD4USAdWnAHiPy0IEUEvlxoHrEjegLLw8syCZ4co7bVfl9RvGck5BzoEq2k64XTj2mbCNQTMsSPs0W8bKqOOE1bSy-mbGBMazMzq50HQxhkV9Z3XgMnAdiEQa2FTupMxGsdtzDT_CP4c749hwxN-BN_WBjljfCol5MOEEGy9x8PbNhKwZOHgXfwTTltwalBksIpsMtHUrs01mF9ZJmPG1xN_xv2CzBVsBm_b3LBZ"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-12">
+<h2 class="font-headline text-[1.75rem] font-bold leading-tight tracking-tight mb-2">PAYMENT OPTIONS</h2>
+<p class="font-body text-on-surface-variant text-lg">Manage your digital wallet and saved cards for seamless transit.</p>
+</section>
+<!-- Digital Wallets Section (Bento Grid Style) -->
+<section class="mb-10">
+<label class="block font-headline font-bold text-xs tracking-widest uppercase mb-4 text-primary">Express Checkout</label>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container hover:bg-surface-container-high transition-colors active:scale-[0.96] group aspect-square rounded-full"><div class="w-12 h-12 flex items-center justify-center mb-3">
+<svg class="w-full h-auto fill-white" viewbox="0 0 256 105" xmlns="http://www.w3.org/2000/svg">
+<path d="M31.2 55.6c-1.3-3.6-2.2-7.8-2.2-12 0-9.6 4.3-16.1 11-16.1 4.5 0 8 2.6 10.3 2.6 2.1 0 5.4-2.4 9.1-2.4 11.2 0 16.5 10 16.5 10s-9.3 4.3-9.3 14.8c0 10.7 9.4 14.5 9.4 14.5s-6.7 18.9-15.6 18.9c-4 0-6.8-2.5-10.2-2.5-3.4 0-7.3 2.6-10.3 2.6-8.5 0-16.7-16.9-16.7-30.4zm23.4-31.5c4.7-5.5 4.3-13.6 4.3-13.6s-7.8.6-12.8 6.4c-4.3 4.9-3.9 12.8-3.9 12.8s8.1.3 12.4-5.6z"></path>
+<path d="M109.9 66.8h-7.7v-25h7.7v25zm-.4-28.7c-2.3 0-4.1-1.7-4.1-3.8s1.8-3.8 4.1-3.8 4.1 1.7 4.1 3.8-1.8 3.8-4.1 3.8zm23.6 23.9c-2.5 3.3-6.1 5.3-10.4 5.3-7.5 0-12.7-5.8-12.7-14s5.2-14.1 12.7-14.1c4.3 0 7.9 2 10.4 5.3v-4.8h7.6v23.2c0 8.4-5 13.5-12.6 13.5-5.8 0-10.3-2.7-11.9-6.9l6.5-2.7c.9 2.1 3 3.1 5.4 3.1 3.6 0 5-2.2 5-6.1v-4.8zm-10.3-1.4c3.4 0 5.9-2.5 5.9-6.7s-2.5-6.7-5.9-6.7-5.9 2.5-5.9 6.7 2.5 6.7 5.9 6.7zm43.3-22.5h7.6v25h-7.6v-25zm-.4-3.7c-2.3 0-4.1-1.7-4.1-3.8s1.8-3.8 4.1-3.8 4.1 1.7 4.1 3.8-1.8 3.8-4.1 3.8zm24.6 15.6c0-4.3-3.6-7.8-7.9-7.8s-7.9 3.5-7.9 7.8 3.5 7.8 7.9 7.8 7.9-3.5 7.9-7.8zm7.6 0c0 8.3-6.6 15.3-15.2 15.3s-15.5-7-15.5-15.3 6.9-15.3 15.5-15.3 15.2 7 15.2 15.3zm21.6 9.4h-7.6v-25h7.6v2.6c1.8-2 4.6-3.1 7.6-3.1 5.6 0 10.1 4.1 10.1 10.1v15.4h-7.6v-14.4c0-3.1-1.8-4.7-4.2-4.7-2.6 0-4.7 2-4.7 5.2v13.9h-1.2z"></path>
+</svg>
+</div>
+<span class="font-label font-semibold text-sm">Apple Pay</span></button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container hover:bg-surface-container-high transition-colors active:scale-[0.96] group aspect-square rounded-full"><div class="w-12 h-12 flex items-center justify-center mb-3">
+<svg class="w-full h-auto fill-white" viewbox="0 0 256 104" xmlns="http://www.w3.org/2000/svg">
+<path d="M140.7 41.8h-12.2v25.1h7.9v-9.6h4.3c5.6 0 10.3-4 10.3-7.8 0-4-4.7-7.7-10.3-7.7zm0 10.4h-4.3v-5.2h4.3c2.4 0 4.3 1.2 4.3 2.6 0 1.5-1.9 2.6-4.3 2.6zm31 14.7h-7.9v-2.3c-1.8 1.8-4.5 2.8-7.5 2.8-5.6 0-10.1-4.2-10.1-10.2s4.5-10.2 10.1-10.2c3 0 5.7 1.1 7.5 2.8v-2.3h7.9v19.4zm-12.8-4.9c3.3 0 5.8-2.4 5.8-5.3s-2.5-5.3-5.8-5.3-5.8 2.4-5.8 5.3 2.5 5.3 5.8 5.3zm42.7-19.4l-9.1 22.8c-1.6 4.1-5.1 6.8-9.2 6.8-2.6 0-4.8-.9-6.2-2.3l4.5-3.8c.6.6 1.1.9 1.7.9 1.5 0 2.7-1 3.2-2.3l.5-1.4-9.3-20.7h8.4l5 12.3 4.9-12.3h8.6zm-119-1.9c-8.5 0-15.6 7-15.6 15.6s7.1 15.6 15.6 15.6c4.6 0 8.7-1.8 11.6-4.8l-5.6-5.6c-1.6 1.5-3.6 2.5-6 2.5-4.2 0-7.7-3.4-7.7-7.7s3.5-7.7 7.7-7.7c3.1 0 5.3 1.9 6.2 4.4h-6.2v7.7h14c.2-.8.3-1.6.3-2.5-.1-10.1-8.1-17.5-18.3-17.5zm43.3 15.6c0-8.6-6.6-15.6-15.2-15.6-8.6 0-15.2 7-15.2 15.6s6.6 15.6 15.2 15.6c8.6 0 15.2-7 15.2-15.6zm-22.3 0c0-4.4 3.1-7.9 7.1-7.9s7.1 3.5 7.1 7.9-3.1 7.9-7.1 7.9-7.1-3.5-7.1-7.9zm50.1 0c0-8.6-6.6-15.6-15.2-15.6-8.6 0-15.2 7-15.2 15.6s6.6 15.6 15.2 15.6c8.6 0 15.2-7 15.2-15.6zm-22.3 0c0-4.4 3.1-7.9 7.1-7.9s7.1 3.5 7.1 7.9-3.1 7.9-7.1 7.9-7.1-3.5-7.1-7.9z"></path>
+</svg>
+</div>
+<span class="font-label font-semibold text-sm">Google Pay</span></button>
+</div>
+</section>
+<!-- Saved Cards Section -->
+<section class="mb-10">
+<div class="flex justify-between items-end mb-6">
+<label class="font-headline font-bold text-xs tracking-widest uppercase text-primary">Saved Cards</label>
+<span class="text-xs text-on-surface-variant font-medium">2 Active Cards</span>
+</div>
+<div class="space-y-4">
+<!-- Primary Card -->
+<div class="relative overflow-hidden kinetic-gradient rounded-xl p-6 text-on-primary-fixed shadow-[0_20px_40px_rgba(0,255,148,0.08)]">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-3xl" data-icon="contactless">contactless</span>
+<span class="font-headline font-bold italic text-xl">VISA</span>
+</div>
+<div class="space-y-1">
+<p class="font-headline text-2xl tracking-[0.2em] font-bold">•••• •••• •••• 8842</p>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase tracking-widest opacity-70">Card Holder</p>
+<p class="font-label font-semibold text-sm uppercase">Alex Rivera</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest opacity-70">Expires</p>
+<p class="font-label font-semibold text-sm">08/26</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Card -->
+<div class="bg-surface-container-high rounded-xl p-6 border border-white/5 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-label font-bold text-on-surface">Mastercard Black</p>
+<p class="font-label text-sm text-on-surface-variant">•••• 4419 • Exp 12/25</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Section -->
+<section class="space-y-4">
+<button class="w-full py-5 kinetic-gradient text-on-primary-fixed rounded-full font-headline font-extrabold text-sm tracking-widest uppercase flex items-center justify-center gap-2 active:scale-[0.96] transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+                Add New Payment Method
+            </button>
+<p class="text-center text-xs text-on-surface-variant font-medium px-8">
+                All transactions are encrypted and secured using industry-standard protocols.
+            </p>
+</section>
+<!-- Billing History Teaser -->
+<section class="mt-12 bg-surface-container-low rounded-xl p-6 border border-white/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="receipt_long">receipt_long</span>
+<span class="font-label font-semibold">View Billing History</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-center pb-8 z-50">
+<div class="bg-[#1a1a1a]/60 backdrop-blur-xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-4 py-3 shadow-[0_20px_40px_rgba(0,255,148,0.08)] flex justify-between items-center">
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</button>
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<button class="bg-[#00FF94] text-[#004624] rounded-full p-3 scale-110 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="payments" data-weight="fill" style="font-variation-settings: 'FILL' 1;">payments</span>
+</button>
+<button class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</body></html>

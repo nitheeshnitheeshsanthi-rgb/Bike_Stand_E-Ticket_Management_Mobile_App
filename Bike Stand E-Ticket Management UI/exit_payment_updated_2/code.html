@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC - Exit Payment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#525151",
+              "primary-dim": "#00ed89",
+              "on-surface": "#ffffff",
+              "error-container": "#9f0519",
+              "surface-dim": "#0e0e0e",
+              "error": "#ff716c",
+              "on-tertiary": "#005160",
+              "on-surface-variant": "#adaaaa",
+              "surface-container-highest": "#262626",
+              "outline-variant": "#484847",
+              "secondary": "#e4e2e1",
+              "tertiary-container": "#11d8ff",
+              "primary-fixed-dim": "#00ed89",
+              "inverse-primary": "#006e3c",
+              "secondary-fixed": "#e4e2e1",
+              "surface-variant": "#262626",
+              "surface": "#0e0e0e",
+              "inverse-surface": "#fcf9f8",
+              "surface-tint": "#a2ffbf",
+              "on-primary-fixed": "#004624",
+              "on-tertiary-fixed": "#00313c",
+              "tertiary-fixed": "#11d8ff",
+              "surface-container-low": "#131313",
+              "on-primary-container": "#005b31",
+              "tertiary-dim": "#00caee",
+              "on-tertiary-fixed-variant": "#005160",
+              "secondary-fixed-dim": "#d6d4d3",
+              "surface-container": "#1a1a1a",
+              "error-dim": "#d7383b",
+              "on-background": "#ffffff",
+              "secondary-dim": "#d6d4d3",
+              "surface-container-high": "#20201f",
+              "tertiary": "#7be2ff",
+              "outline": "#767575",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-tertiary-container": "#004755",
+              "secondary-container": "#474747",
+              "primary-fixed": "#00fd93",
+              "inverse-on-surface": "#565555",
+              "on-error-container": "#ffa8a3",
+              "on-primary-fixed-variant": "#006638",
+              "primary-container": "#00fd93",
+              "on-secondary-container": "#d2d0cf",
+              "surface-container-lowest": "#000000",
+              "on-error": "#490006",
+              "background": "#0e0e0e",
+              "on-primary": "#006437",
+              "primary": "#a2ffbf",
+              "surface-bright": "#2c2c2c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #0e0e0e;
+        color: #ffffff;
+      }
+    </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#0e0e0e] dark:bg-[#0e0e0e] fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#a2ffbf] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-['Manrope'] tracking-tighter font-bold uppercase text-2xl text-[#a2ffbf]">KINETIC</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full border border-primary/20 uppercase tracking-tighter">In Progress</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="User profile portrait in circular frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPENqBhj8p5Pf-cV15z_VrYx07jV-x-fDHoAf71anO1SbRQJpEtyI28EUwic9yEa1gOXXacZdo5LC7x9v82A1I0Kl7zVNSU1ZUD252c3zpTjXu1-aQZ4XGM8PkOolPg-DU3FVM8jxXvO1eQSFubcZn7XlnkZPqdo5vmb1NwdrNJaJ5FqB7Tov7ZXw-1tXvarTgouy88r_Vob6hOudnQq3hu5i4LN-e6KpUGc-JURPulNuKuJF2e2Y9I-hh7EK-yBCITlx38z6O5pU3"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Hero Section: Total Amount -->
+<section class="mb-12">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline text-on-surface-variant uppercase tracking-widest text-xs font-bold block">Current Session</span>
+<span class="font-mono text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded border border-outline-variant/20">ID: KNT-8842-XP</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline text-[3.5rem] leading-none font-extrabold tracking-tighter text-primary">
+                    ₹945.00
+                </h2>
+<p class="text-on-surface-variant font-medium text-lg">Total Parking Fee</p>
+</div>
+</section>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-2 gap-4 mb-12">
+<div class="bg-surface-container p-8 rounded-xl flex flex-col justify-between min-h-[160px]">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="logout">logout</span>
+<div>
+<p class="text-[1.75rem] font-headline font-bold leading-none mb-1">18:45</p>
+<p class="text-on-surface-variant text-sm uppercase tracking-wider font-semibold">Exit Time</p>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-xl flex flex-col justify-between min-h-[160px]">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="schedule">schedule</span>
+<div>
+<p class="text-[1.75rem] font-headline font-bold leading-none mb-1">04:42</p>
+<p class="text-on-surface-variant text-sm uppercase tracking-wider font-semibold">Total Hours</p>
+</div>
+</div>
+</div>
+<!-- Payment Method Selection -->
+<section class="mb-12">
+<h3 class="font-headline text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+                Payment Method
+            </h3>
+<div class="space-y-3">
+<!-- Method: Digital Wallet -->
+<div class="bg-surface-container p-6 rounded-xl flex items-center justify-between border border-primary/20 bg-primary/5 cursor-pointer group active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="contactless">contactless</span>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">UPI / Wallet</p>
+<p class="text-on-surface-variant text-sm">GPay / PhonePe / Paytm</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center p-1">
+<div class="w-full h-full bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Method: Credit Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between cursor-pointer group hover:bg-surface-container active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface-variant group-hover:text-on-surface transition-colors">Credit Card</p>
+<p class="text-on-surface-variant text-sm">**** 4421</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant"></div>
+</div>
+</div>
+</section>
+<!-- Breakdown Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl mb-12 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-4 text-sm">
+<span class="text-on-surface-variant">Ticket ID</span>
+<span class="font-mono font-medium">KNT-8842-XP</span>
+</div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-on-surface-variant">Base Rate (4h)</span>
+<span class="font-medium">₹800.00</span>
+</div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-on-surface-variant">eBike Charging</span>
+<span class="font-medium">₹75.00</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<span class="text-on-surface-variant">GST (18%)</span>
+<span class="font-medium">₹70.00</span>
+</div>
+<div class="h-px bg-outline-variant/20 mb-6"></div>
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-lg">Total Due</span>
+<span class="font-headline font-extrabold text-2xl text-primary">₹945.00</span>
+</div>
+</section>
+<!-- Confirm Button -->
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-headline font-bold text-lg py-5 rounded-full shadow-[0_20px_40px_rgba(162,255,191,0.15)] active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span>Pay ₹945.00 Now</span>
+<span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-on-surface-variant text-xs mt-6 px-12">
+            By confirming, you agree to the Kinetic Transit Terms of Service and automated billing.
+        </p>
+</main>
+<!-- Decorative Kinetic Element -->
+<div class="fixed top-1/2 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+<div class="fixed bottom-0 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+</body></html>

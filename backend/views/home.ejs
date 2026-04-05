@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SRI APARNA - Client Hub</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "primary": "#a2ffbf",
+                  "primary-dim": "#00ed89",
+                  "surface": "#080808",
+                  "on-surface": "#ffffff",
+                  "surface-container": "#121212",
+                  "surface-container-high": "#1a1a1a",
+                  "on-surface-variant": "#94a3b8",
+                  "outline": "#334155",
+                },
+                fontFamily: {
+                  "headline": ["Outfit"],
+                  "body": ["Plus Jakarta Sans"],
+                },
+              },
+            },
+          }
+    </script>
+    <style>
+        .glass { background: rgba(18, 18, 18, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at 50% -20%, rgba(162, 255, 191, 0.08) 0%, rgba(8, 8, 8, 1) 80%); }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(162, 255, 191, 0.1); border-color: #a2ffbf; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen overflow-hidden hero-gradient">
+    <main class="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+        <!-- Logo Area -->
+        <div class="mb-12">
+            <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-primary/40 shadow-[0_0_20px_rgba(162,255,191,0.2)]">
+                <span class="material-symbols-outlined text-primary text-4xl font-bold animate-pulse">install_mobile</span>
+            </div>
+            <h1 class="font-headline text-5xl font-black tracking-tighter mb-2">PLATFORM <span class="text-primary">CHOICE</span></h1>
+            <p class="text-on-surface-variant text-sm font-semibold opacity-60">How would you like to experience the system?</p>
+        </div>
+
+        <!-- Choice Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+            <!-- App View -->
+            <div onclick="window.alert('MOBILE APP LAUNCH: Press \"a\" in your main Expo terminal to launch on your connected Redmi 10 Power device.')" class="glass group card-hover p-12 rounded-[3.5rem] transition-all flex flex-col items-center gap-8 cursor-pointer relative overflow-hidden text-center">
+                <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-24 h-24 rounded-[2rem] bg-surface-container-high flex items-center justify-center border border-outline/30 group-hover:bg-primary group-hover:text-surface transition-colors duration-500">
+                    <span class="material-symbols-outlined text-5xl">smartphone</span>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold font-headline tracking-tighter mb-3 uppercase">App View</h3>
+                    <p class="text-on-surface-variant text-base font-medium max-w-xs mb-6">Runs as a native Android app on your phone. <br><span class="text-primary font-bold">(Connected via USB)</span></p>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="h-2 w-2 rounded-full bg-primary animate-ping"></div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Ready to Launch</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web View -->
+            <a href="/staff" class="glass group card-hover p-12 rounded-[3.5rem] transition-all flex flex-col items-center gap-8 relative overflow-hidden text-center">
+                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-24 h-24 rounded-[2rem] bg-surface-container-high flex items-center justify-center border border-outline/30 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-5xl text-on-surface">account_tree</span>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold font-headline tracking-tighter mb-3 uppercase">Web View</h3>
+                    <p class="text-on-surface-variant text-base font-medium max-w-xs mb-6">Actual mobile app UI with options & features. Opens directly in the web browser.</p>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="h-2 w-2 rounded-full bg-white opacity-40"></div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-on-surface">System Preview</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Meta -->
+        <div class="mt-20 opacity-30">
+            <div class="flex items-center gap-6 justify-center mb-4">
+                <div class="h-1 w-1 rounded-full bg-white"></div>
+                <p class="text-[9px] font-black tracking-[.6em] uppercase">SRI APARNA HUB SERVICE</p>
+                <div class="h-1 w-1 rounded-full bg-white"></div>
+            </div>
+            <div class="flex gap-2 justify-center">
+                <div class="h-1 w-8 bg-primary rounded-full"></div>
+                <div class="h-1 w-1 bg-primary rounded-full"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

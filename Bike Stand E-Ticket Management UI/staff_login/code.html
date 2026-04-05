@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeoCycle Staff - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            box-shadow: 0 0 40px rgba(162, 255, 191, 0.08);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-dim": "#0e0e0e",
+                "on-primary-fixed-variant": "#006638",
+                "on-surface": "#ffffff",
+                "error": "#ff716c",
+                "on-secondary": "#525151",
+                "on-error-container": "#ffa8a3",
+                "surface-variant": "#262626",
+                "surface-tint": "#a2ffbf",
+                "secondary": "#e4e2e1",
+                "tertiary-dim": "#00caee",
+                "surface": "#0e0e0e",
+                "inverse-surface": "#fcf9f8",
+                "surface-bright": "#2c2c2c",
+                "primary-container": "#00fd93",
+                "background": "#0e0e0e",
+                "error-dim": "#d7383b",
+                "surface-container-low": "#131313",
+                "primary-dim": "#00ed89",
+                "tertiary-fixed": "#11d8ff",
+                "secondary-container": "#474747",
+                "on-surface-variant": "#adaaaa",
+                "on-secondary-fixed": "#3f3f3f",
+                "on-tertiary": "#005160",
+                "primary-fixed-dim": "#00ed89",
+                "surface-container-lowest": "#000000",
+                "surface-container-high": "#20201f",
+                "on-secondary-container": "#d2d0cf",
+                "tertiary-container": "#11d8ff",
+                "outline": "#767575",
+                "on-primary-fixed": "#004624",
+                "inverse-on-surface": "#565555",
+                "secondary-dim": "#d6d4d3",
+                "on-background": "#ffffff",
+                "outline-variant": "#484847",
+                "inverse-primary": "#006e3c",
+                "surface-container-highest": "#262626",
+                "error-container": "#9f0519",
+                "on-primary": "#006437",
+                "tertiary": "#7be2ff",
+                "on-tertiary-fixed-variant": "#005160",
+                "on-tertiary-fixed": "#00313c",
+                "surface-container": "#1a1a1a",
+                "tertiary-fixed-dim": "#00caee",
+                "on-error": "#490006",
+                "on-tertiary-container": "#004755",
+                "primary": "#a2ffbf",
+                "secondary-fixed": "#e4e2e1",
+                "on-primary-container": "#005b31",
+                "secondary-fixed-dim": "#d6d4d3",
+                "primary-fixed": "#00fd93",
+                "on-secondary-fixed-variant": "#5c5b5b"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
+<!-- Shared Component: TopAppBar -->
+<header class="docked full-width top-0 z-50 flex items-center justify-between px-6 py-4 w-full no-border bg-[#1a1a1a] flat no-shadows">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00FF94]" data-icon="shield_person">shield_person</span>
+<span class="text-xl font-bold tracking-tighter text-[#00FF94] font-['Manrope']">NeoCycle Staff</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#adaaaa] hover:opacity-80 transition-opacity cursor-pointer" data-icon="help_outline">help_outline</span>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-6 py-12">
+<div class="w-full max-w-md space-y-12">
+<!-- Hero Typography -->
+<div class="space-y-4">
+<h1 class="font-headline font-extrabold text-[2.5rem] leading-tight tracking-tight text-on-surface">
+                    Welcome Back,<br/>Admin
+                </h1>
+<p class="font-body text-on-surface-variant max-w-[280px]">
+                    Access the NeoCycle transit hub to manage fleet operations and network status.
+                </p>
+</div>
+<!-- Login Form -->
+<form class="space-y-6">
+<div class="space-y-4">
+<!-- Email Field -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="alternate_email">alternate_email</span>
+</div>
+<input class="w-full h-16 pl-14 pr-6 bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary/20 transition-all font-body" placeholder="Username / Email" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+</div>
+<input class="w-full h-16 pl-14 pr-14 bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary/20 transition-all font-body" placeholder="Password" type="password"/>
+<button class="absolute inset-y-0 right-5 flex items-center text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+<div class="flex justify-end">
+<a class="text-sm font-label font-medium text-primary hover:opacity-80 transition-opacity" href="#">Forgot Password?</a>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-16 bg-primary text-on-primary-fixed font-headline font-bold text-lg rounded-full active:scale-95 duration-200 neon-glow transition-all flex items-center justify-center gap-2" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Bottom Content -->
+<div class="text-center pt-8">
+<p class="font-body text-on-surface-variant mb-2">Need an account?</p>
+<a class="inline-flex items-center gap-2 h-12 px-8 rounded-full border border-outline-variant/15 text-on-surface font-label font-semibold hover:bg-surface-container-high transition-colors" href="#">
+                    Contact Admin
+                </a>
+</div>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-8 pt-4 bg-[#1a1a1a]/60 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-20px_40px_rgba(162,255,191,0.08)]">
+<!-- Active: Login -->
+<a class="flex flex-col items-center justify-center bg-[#00FF94] text-[#004624] rounded-full p-3 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="login" style="font-variation-settings: 'FILL' 1;">login</span>
+</a>
+<!-- Inactive: Sign Up -->
+<a class="flex flex-col items-center justify-center text-[#adaaaa] p-3 hover:bg-[#262626] rounded-full active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</a>
+</nav>
+<!-- Visual Accents -->
+<div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-[-1]"></div>
+<div class="fixed bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-primary/3 blur-[100px] rounded-full pointer-events-none z-[-1]"></div>
+</body></html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC - Digital Ticket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#525151",
+              "primary-dim": "#00ed89",
+              "on-surface": "#ffffff",
+              "error-container": "#9f0519",
+              "surface-dim": "#0e0e0e",
+              "error": "#ff716c",
+              "on-tertiary": "#005160",
+              "on-surface-variant": "#adaaaa",
+              "surface-container-highest": "#262626",
+              "outline-variant": "#484847",
+              "secondary": "#e4e2e1",
+              "tertiary-container": "#11d8ff",
+              "primary-fixed-dim": "#00ed89",
+              "inverse-primary": "#006e3c",
+              "secondary-fixed": "#e4e2e1",
+              "surface-variant": "#262626",
+              "surface": "#0e0e0e",
+              "inverse-surface": "#fcf9f8",
+              "surface-tint": "#a2ffbf",
+              "on-primary-fixed": "#004624",
+              "on-tertiary-fixed": "#00313c",
+              "tertiary-fixed": "#11d8ff",
+              "surface-container-low": "#131313",
+              "on-secondary-fixed": "#3f3f3f",
+              "tertiary-dim": "#00caee",
+              "on-primary-container": "#005b31",
+              "tertiary-fixed-dim": "#00caee",
+              "on-tertiary-fixed-variant": "#005160",
+              "secondary-fixed-dim": "#d6d4d3",
+              "surface-container": "#1a1a1a",
+              "error-dim": "#d7383b",
+              "on-background": "#ffffff",
+              "secondary-dim": "#d6d4d3",
+              "surface-container-high": "#20201f",
+              "tertiary": "#7be2ff",
+              "outline": "#767575",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-tertiary-container": "#004755",
+              "secondary-container": "#474747",
+              "primary-fixed": "#00fd93",
+              "inverse-on-surface": "#565555",
+              "on-error-container": "#ffa8a3",
+              "on-primary-fixed-variant": "#006638",
+              "primary-container": "#00fd93",
+              "on-secondary-container": "#d2d0cf",
+              "surface-container-lowest": "#000000",
+              "on-error": "#490006",
+              "background": "#0e0e0e",
+              "on-primary": "#006437",
+              "primary": "#a2ffbf",
+              "surface-bright": "#2c2c2c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary-fixed">
+<!-- Top App Bar -->
+<header class="bg-[#0e0e0e] dark:bg-[#0e0e0e] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#a2ffbf]" data-icon="menu">menu</span>
+<h1 class="font-['Manrope'] tracking-tighter font-bold uppercase text-2xl font-black tracking-tighter text-[#a2ffbf]">KINETIC</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Minimalist user profile avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1k2oXYi_oRsRsbs6FKQ63xvMvfh671c8plWCxbzOQynoIdc5pNKOoEEqhh7ZznuQNDA86rBHXqlCG0nbffkjGjc3m6rFNXyLE3SbSAa3rB9CMCTrRaYxY6aEikKubNuQ-smWqp_qQX36bJBMFQDwk756xxVIclNnPrlBh5MXCBs-9-g6iFfcZbDScQJKGelYG61HDjKWwQsXlY5BnN2eaCLjxRnksOIr3WHiNuABmp7PqW1fdHykwjT99XDhS3zf9E5JcDutw1Dep"/>
+</div>
+</header>
+<main class="max-w-md mx-auto px-6 pt-4 pb-32">
+<!-- Title & Asymmetric spacing -->
+<div class="mb-10 pl-4">
+<span class="text-primary font-headline font-bold tracking-widest text-xs uppercase mb-2 block">Active Session</span>
+<h2 class="text-on-surface font-headline text-3xl font-extrabold tracking-tighter">Your Digital Pass</h2>
+</div>
+<!-- Ticket Component -->
+<div class="relative">
+<!-- Main Ticket Body -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(162,255,191,0.05)]">
+<!-- Ticket Header -->
+<div class="p-8 pb-6 border-b border-white/5">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em] mb-1">Station</p>
+<h3 class="text-on-surface font-headline text-xl font-bold">North Hub Terminal</h3>
+</div>
+<div class="bg-primary/10 px-3 py-1 rounded-full">
+<span class="text-primary font-label text-[10px] font-bold uppercase tracking-wider">Level 02</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<p class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em] mb-1">Entry Time</p>
+<p class="text-on-surface font-headline font-bold">08:42 AM</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em] mb-1">Duration</p>
+<p class="text-on-surface font-headline font-bold">02h 14m</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em] mb-1">Vehicle ID</p>
+<p class="text-on-surface font-headline font-bold">KN-9022</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em] mb-1">Pass Type</p>
+<p class="text-on-surface font-headline font-bold">Standard</p>
+</div>
+</div>
+</div>
+<!-- QR Section -->
+<div class="bg-surface-container-high p-8 flex flex-col items-center gap-6">
+<div class="bg-white p-4 rounded-lg shadow-inner">
+<img alt="QR Code" class="w-40 h-40" data-alt="High contrast QR code for bike parking scan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbdYZyCvusMcQqRsoNkyhux3l2quSgOpNDIiLQc80DvxeHqRCeVkB5uDE3Zo0AN9zULK15I8Y06LSJvlwc6w9CuNfAdY2uM4dU2bMCEBQDIoSTrv0470cuF6-DaUW-Ii_YEatzMRNMSmuFCgNZ715Q77KA3y5yO8ybfEzqj_t87gYigEhCQXwmGt01h2vNgmT_8Uczl9GMlbf3rmDmVz56cei8hljIEdAp6kCLSEvr32qAn1XjLFpm360CB_X9AEGVpRDnL0z_XgnZ"/>
+</div>
+<div class="text-center">
+<p class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.3em] mb-2">Scan at exit</p>
+<p class="text-on-surface font-body font-mono tracking-widest opacity-50 text-sm"># KNT-009-XF22</p>
+</div>
+</div>
+</div>
+<!-- Kinetic Inset Accents (Decorative) -->
+<div class="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-8 bg-surface rounded-r-full"></div>
+<div class="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-8 bg-surface rounded-l-full"></div>
+</div>
+<!-- Actions List -->
+<div class="mt-10 space-y-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container py-5 rounded-full flex items-center justify-center gap-3 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="download">download</span>
+<span class="text-on-primary-fixed font-headline font-bold uppercase tracking-widest text-sm">Download Ticket</span>
+</button>
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-container-high py-4 rounded-full flex items-center justify-center gap-2 border border-outline-variant/15 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface text-sm" data-icon="share">share</span>
+<span class="text-on-surface font-headline font-bold uppercase tracking-widest text-[10px]">Share Pass</span>
+</button>
+<button class="bg-surface-container-high py-4 rounded-full flex items-center justify-center gap-2 border border-outline-variant/15 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface text-sm" data-icon="help">help</span>
+<span class="text-on-surface font-headline font-bold uppercase tracking-widest text-[10px]">Support</span>
+</button>
+</div>
+</div>
+<!-- Contextual Occupancy Gauge (Minority UI pattern) -->
+<div class="mt-12 p-6 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-end mb-4">
+<p class="text-on-surface font-headline font-bold">Station Load</p>
+<p class="text-primary font-body text-sm font-bold">64% Full</p>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-dim rounded-full w-[64%] shadow-[0_0_10px_rgba(0,237,137,0.4)]"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#1a1a1a]/80 backdrop-blur-xl rounded-t-[3rem] px-4 pb-6 pt-2 shadow-[0_-20px_40px_rgba(162,255,191,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#adaaaa] py-2 px-4 hover:text-[#ffffff] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home_max">home_max</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#a2ffbf] bg-[#a2ffbf]/10 rounded-full py-2 px-4 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="Confirmation_Number" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Ticket</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] py-2 px-4 hover:text-[#ffffff] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] py-2 px-4 hover:text-[#ffffff] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>

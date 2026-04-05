@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>KINETIC - Web Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "primary": "#a2ffbf",
+                  "primary-dim": "#00ed89",
+                  "surface": "#0e0e0e",
+                  "on-surface": "#ffffff",
+                  "surface-container": "#1a1a1a",
+                  "surface-container-high": "#20201f",
+                  "on-surface-variant": "#adaaaa",
+                  "tertiary": "#7be2ff",
+                  "secondary": "#e4e2e1",
+                  "error": "#ff716c",
+                },
+                fontFamily: {
+                  "headline": ["Manrope"],
+                  "body": ["Inter"],
+                },
+              },
+            },
+          }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+    <header class="bg-surface flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+        <div class="flex items-center gap-4">
+            <h1 class="font-headline tracking-tighter font-bold uppercase text-2xl text-primary">KINETIC</h1>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+            <span class="material-symbols-outlined text-primary">dashboard</span>
+        </div>
+    </header>
+
+    <main class="pt-24 px-6 max-w-5xl mx-auto">
+        <section class="mb-10">
+            <div class="flex flex-col gap-2 mb-6">
+                <span class="font-headline text-on-surface-variant uppercase tracking-[0.2em] text-xs font-bold">Live Admin View</span>
+                <h2 class="font-headline text-4xl font-extrabold tracking-tighter">System Overview</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 relative overflow-hidden bg-surface-container rounded-xl p-8 flex flex-col justify-between min-h-[250px] group">
+                    <div class="absolute top-0 right-0 p-8">
+                        <span class="flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                        </span>
+                    </div>
+                    <div>
+                        <p class="font-headline text-primary text-sm font-bold uppercase tracking-widest mb-2">Today's Revenue</p>
+                        <h3 class="font-headline text-6xl font-black tracking-tighter mb-4">₹<%= stats.revenueToday %></h3>
+                        <p class="text-on-surface-variant font-medium">From <span class="text-on-surface"><%= stats.totalVehiclesToday %></span> completed sessions today</p>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-high rounded-xl p-8 flex flex-col justify-between">
+                    <div>
+                        <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-6">Station Capacity</p>
+                        <div class="relative h-4 w-full bg-surface-container-highest rounded-full overflow-hidden mb-4">
+                            <div class="absolute top-0 left-0 h-full bg-primary-dim w-[<%= Math.min(100, (stats.totalVehiclesToday / 100) * 100) %>%] rounded-full"></div>
+                        </div>
+                        <p class="font-headline text-2xl font-bold tracking-tight"><%= stats.totalVehiclesToday %> Active</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h3 class="font-headline text-on-surface-variant uppercase tracking-[0.2em] text-xs font-bold mb-6">Quick Actions</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="/staff" class="bg-surface-container rounded-xl p-6 aspect-square flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer group">
+                    <div class="w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+                        <span class="material-symbols-outlined">add_circle</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-lg leading-tight uppercase tracking-tighter">Book Ticket</h4>
+                </a>
+                <a href="/staff" class="bg-surface-container rounded-xl p-6 aspect-square flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer group">
+                    <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary">
+                        <span class="material-symbols-outlined">logout</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-lg leading-tight uppercase tracking-tighter">Process Exit</h4>
+                </a>
+                <!-- ... other items ... -->
+            </div>
+        </section>
+    </main>
+
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#1a1a1a]/80 backdrop-blur-xl rounded-t-[3rem] px-4 pb-6 pt-2">
+        <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-full py-2 px-4" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+        </a>
+    </nav>
+</body>
+</html>

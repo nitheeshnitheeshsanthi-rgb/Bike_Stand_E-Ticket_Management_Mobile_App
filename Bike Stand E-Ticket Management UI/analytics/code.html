@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#20201f",
+              "secondary-dim": "#d6d4d3",
+              "error-dim": "#d7383b",
+              "inverse-on-surface": "#565555",
+              "error-container": "#9f0519",
+              "tertiary-fixed": "#11d8ff",
+              "on-secondary-container": "#d2d0cf",
+              "on-primary": "#006437",
+              "background": "#0e0e0e",
+              "on-tertiary-container": "#004755",
+              "inverse-surface": "#fcf9f8",
+              "on-primary-fixed": "#004624",
+              "secondary-container": "#474747",
+              "on-primary-container": "#005b31",
+              "on-surface-variant": "#adaaaa",
+              "surface": "#0e0e0e",
+              "primary-fixed": "#00fd93",
+              "surface-container-highest": "#262626",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-error-container": "#ffa8a3",
+              "secondary": "#e4e2e1",
+              "primary-container": "#00fd93",
+              "outline-variant": "#484847",
+              "tertiary": "#7be2ff",
+              "surface-container": "#1a1a1a",
+              "primary-dim": "#00ed89",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#00caee",
+              "surface-bright": "#2c2c2c",
+              "on-secondary": "#525151",
+              "surface-dim": "#0e0e0e",
+              "inverse-primary": "#006e3c",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed": "#00313c",
+              "primary-fixed-dim": "#00ed89",
+              "surface-tint": "#a2ffbf",
+              "surface-variant": "#262626",
+              "surface-container-low": "#131313",
+              "secondary-fixed-dim": "#d6d4d3",
+              "secondary-fixed": "#e4e2e1",
+              "on-error": "#490006",
+              "error": "#ff716c",
+              "on-secondary-fixed": "#3f3f3f",
+              "primary": "#a2ffbf",
+              "on-tertiary-fixed-variant": "#005160",
+              "on-primary-fixed-variant": "#006638",
+              "tertiary-fixed-dim": "#00caee",
+              "tertiary-container": "#11d8ff",
+              "on-surface": "#ffffff",
+              "on-tertiary": "#005160",
+              "outline": "#767575"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#00FF94] active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Manrope'] tracking-tighter uppercase font-bold text-xl font-black text-[#00FF94] tracking-[-0.04em]">VELO_KINETIC</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="User avatar" data-alt="High-end professional user profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK12CSZo9f1ima3f5G3OZxJfSMHOBLEhPK2GXVBZ2PZOGRdbXCa7yNf1tjU2KdyY2VjOCyD4kQTGEC1mKVzNiO-y5Pnhc-t7jJRiF9iRhCR2dYkI6nZnJe4tp-6acCtsGC8_uj02BQtdvmQt0lRxKMrHWffl19qXpJFZ68R66SBqdWEcWFgnAgQAGSHJ6zRJutHyGcla0py1R51wppZfZnL5p9XG9nZm2eUN9sF8Tovbv3YHf5wY-xJyAZrODTfh_lY7OPAw6t48Dr"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-8">
+<!-- Hero Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">payments</span>
+</div>
+<p class="text-on-surface-variant font-headline uppercase tracking-widest text-xs mb-2">Daily Revenue</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tighter text-on-surface">₹1,284.50</h2>
+<div class="mt-4 flex items-center gap-2 text-primary text-sm font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.4% from yesterday</span>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">schedule</span>
+</div>
+<p class="text-on-surface-variant font-headline uppercase tracking-widest text-xs mb-2">Avg. Session</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tighter text-on-surface">4h 12m</h2>
+<div class="mt-4 flex items-center gap-2 text-primary text-sm font-medium">
+<span class="material-symbols-outlined text-sm">timer</span>
+<span>Optimized turnover</span>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">pedal_bike</span>
+</div>
+<p class="text-on-surface-variant font-headline uppercase tracking-widest text-xs mb-2">Active Units</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tighter text-on-surface">142</h2>
+<div class="mt-4 flex items-center gap-2 text-on-surface-variant text-sm font-medium">
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[88%] rounded-full shadow-[0_0_8px_rgba(162,255,191,0.4)]"></div>
+</div>
+<span class="whitespace-nowrap">88% Capacity</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Charts -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Peak Hours - Large Bento Cell -->
+<div class="md:col-span-8 bg-surface-container rounded-xl p-8">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Peak Activity Hours</h3>
+<p class="text-on-surface-variant text-sm">Hourly distribution of check-ins/outs</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high rounded-full text-xs font-bold text-on-surface border border-outline-variant/10">WEEKLY</button>
+<button class="px-4 py-2 bg-primary text-on-primary-fixed rounded-full text-xs font-bold shadow-[0_4px_12px_rgba(0,253,147,0.2)]">DAILY</button>
+</div>
+</div>
+<!-- Fake Bar Chart Visualization -->
+<div class="h-64 flex items-end justify-between gap-2 px-2">
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[20%] transition-all hover:bg-primary-dim/30 relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] font-bold text-primary">06:00</div>
+</div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[35%] transition-all hover:bg-primary-dim/30"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[85%] shadow-[0_0_20px_rgba(162,255,191,0.15)] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 text-[10px] font-bold text-primary">08:00</div>
+</div>
+<div class="flex-1 bg-primary-dim/60 rounded-t-lg h-[65%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[30%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[45%]"></div>
+<div class="flex-1 bg-primary-dim/80 rounded-t-lg h-[75%]"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[95%] shadow-[0_0_20px_rgba(162,255,191,0.15)] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 text-[10px] font-bold text-primary">17:00</div>
+</div>
+<div class="flex-1 bg-primary-dim/70 rounded-t-lg h-[70%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[25%]"></div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+<span>Morning</span>
+<span>Noon</span>
+<span>Evening</span>
+</div>
+</div>
+<!-- Revenue Trend - Tall Bento Cell -->
+<div class="md:col-span-4 bg-surface-container rounded-xl p-8 flex flex-col">
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface mb-1">Revenue Trend</h3>
+<p class="text-on-surface-variant text-sm mb-8">7-day financial snapshot</p>
+<div class="flex-grow flex flex-col justify-between py-4">
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Mon</span>
+<div class="flex-grow mx-4 h-[2px] bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[60%]"></div>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">₹840</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tue</span>
+<div class="flex-grow mx-4 h-[2px] bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[75%]"></div>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">₹1,020</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Wed</span>
+<div class="flex-grow mx-4 h-[2px] bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[95%] shadow-[0_0_8px_rgba(162,255,191,0.3)]"></div>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">₹1,284</span>
+</div>
+<div class="flex justify-between items-end opacity-50">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Thu</span>
+<div class="flex-grow mx-4 h-[2px] bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full w-[40%]"></div>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">--</span>
+</div>
+</div>
+<div class="mt-12 p-6 bg-surface-container-lowest rounded-lg border border-outline-variant/5">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">Projected Monthly</p>
+<h4 class="text-2xl font-headline font-black text-primary">₹38,420</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Insights -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container rounded-xl p-8">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold tracking-tight text-on-surface">Top Station Utilization</h3>
+<p class="text-on-surface-variant text-sm">Most active parking zones</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-low rounded-lg flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-black text-primary/40 group-hover:text-primary transition-colors">01</span>
+<span class="font-medium text-on-surface">Grand Central Kinetic</span>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">94%</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-black text-primary/40 group-hover:text-primary transition-colors">02</span>
+<span class="font-medium text-on-surface">Waterfront Tech Hub</span>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">88%</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-black text-primary/40 group-hover:text-primary transition-colors">03</span>
+<span class="font-medium text-on-surface">Financial District S.</span>
+</div>
+<span class="text-sm font-headline font-bold text-on-surface">76%</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-8 overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-headline text-lg font-bold tracking-tight text-on-surface mb-1">Session Duration Distro</h3>
+<p class="text-on-surface-variant text-sm mb-8">User retention by timeframe</p>
+<div class="flex items-center justify-center py-4">
+<!-- Custom Radial Chart Representation -->
+<div class="relative w-40 h-40">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="110" stroke-width="12"></circle>
+<circle class="text-primary-dim/40" cx="80" cy="80" fill="transparent" r="50" stroke="currentColor" stroke-dasharray="314" stroke-dashoffset="94" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black font-headline text-on-surface">75%</span>
+<span class="text-[8px] uppercase font-bold tracking-tighter text-on-surface-variant">Long Stay</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">4h - 12h</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary-dim/40"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">1h - 4h</span>
+</div>
+</div>
+</div>
+<!-- Artistic background glow -->
+<div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 w-full flex justify-center pb-8 z-50">
+<nav class="bg-[#1a1a1a]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,255,148,0.08)] fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-4 py-3 flex justify-between items-center">
+<a class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+</a>
+<a class="bg-[#00FF94] text-[#004624] rounded-full p-3 scale-110 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</a>
+<a class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+</a>
+<a class="text-[#adaaaa] p-3 hover:text-[#ffffff] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+</a>
+</nav>
+</div>
+</body></html>
