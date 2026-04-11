@@ -24,7 +24,11 @@ const LoginScreen = ({ navigation, route }) => {
       await authService.login(email, password, roleHint);
       navigation.replace('Main');
     } catch (err) {
-      Alert.alert('Login Failed', err.response?.data?.message || 'Invalid credentials');
+      if (!err.response) {
+        Alert.alert('Connection Error', 'Cannot reach the server. Please ensure your phone is on the same Wi-Fi as your PC and the IP address is correct.');
+      } else {
+        Alert.alert('Login Failed', err.response?.data?.message || 'Invalid credentials');
+      }
     } finally {
       setLoading(false);
     }

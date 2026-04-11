@@ -10,23 +10,22 @@ const seedData = async () => {
     await mongoose.connect(MONGO_URI);
     console.log('📡 Connected to MongoDB');
 
-    const adminExists = await User.findOne({ email: 'akumar@aparna.io' });
+    // First, clear any existing users with this email (all roles) to avoid conflicts
+    await User.deleteMany({ email: 'akumar@aparna.io' });
+    console.log('🧹 Cleared existing accounts for akumar@aparna.io');
+
+    // Create the fresh staff account
+    const admin = new User({ 
+      name: 'kumar',
+      email: 'akumar@aparna.io',
+      password: 'admin123',
+      role: 'staff',
+      username: 'kumar_owner',
+      phone: '9999999999'
+    });
     
-    if (!adminExists) {
-      console.log('⚙️ Creating new admin user object...');
-      const admin = new User({
-        name: 'kumar',
-        email: 'akumar@aparna.io',
-        password: 'admin123',
-        role: 'admin',
-        username: 'kumar_owner',
-        phone: '9999999999'
-      });
-      await admin.save();
-      console.log('✅ Default Admin Created: akumar@aparna.io / admin123');
-    } else {
-      console.log('ℹ️ Admin account already exists (akumar@aparna.io).');
-    }
+    await admin.save();
+    console.log('✅ Default Staff Created: akumar@aparna.io / admin123');
 
     const slots = ['A01', 'A02', 'A03', 'A04', 'A05', 'B01', 'B02', 'B03', 'B04', 'B05'];
     for (const slotNum of slots) {
