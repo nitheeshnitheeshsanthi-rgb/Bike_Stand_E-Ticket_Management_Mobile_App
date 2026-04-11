@@ -8,8 +8,8 @@ const { width } = Dimensions.get('window');
 
 const LoginScreen = ({ navigation, route }) => {
   const { roleHint } = route.params || {};
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('akumar@aparna.io');
+  const [password, setPassword] = useState('admin123');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);

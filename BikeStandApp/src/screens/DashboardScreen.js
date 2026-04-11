@@ -14,9 +14,11 @@ const DashboardScreen = ({ navigation }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchInitialData = async () => {
     setLoading(true);
+    setError(null);
     try {
       const [userData, statData, historyData] = await Promise.all([
         AsyncStorage.getItem('user'),
@@ -33,6 +35,11 @@ const DashboardScreen = ({ navigation }) => {
       }
     } catch (err) {
       console.error('Dashboard Load Error:', err);
+      if (err.response?.status === 401) {
+        setError('Session expired. Please log in again.');
+      } else {
+        setError('Could not connect to server. Please check your network.');
+      }
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -53,7 +60,34 @@ const DashboardScreen = ({ navigation }) => {
     fetchInitialData();
   };
 
-  if (loading) return <View style={styles.center}><ActivityIndicator size="large" color={Theme.colors.primary} /></View>;
+  if (loading) {
+    return (
+      <View style={[styles.center, { backgroundColor: Theme.colors.background }]}>
+        <ActivityIndicator size="large" color={Theme.colors.primary} />
+        <Text style={{ color: Theme.colors.primary, marginTop: 15, fontSize: 10, letterSpacing: 2 }}>SYNCING DATA...</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={[styles.center, { backgroundColor: Theme.colors.background, padding: 40 }]}>
+        <View style={styles.errorPulse}>
+           <Text style={{ color: Theme.colors.error, fontSize: 40 }}>⚠️</Text>
+        </View>
+        <Text style={{ color: '#fff', fontSize: 18, fontWeight: '800', marginTop: 20 }}>Connection Failed</Text>
+        <Text style={{ color: Theme.colors.onSurfaceVariant, textAlign: 'center', marginTop: 10, lineHeight: 20 }}>
+          {error}
+        </Text>
+        <TouchableOpacity 
+          style={[styles.parkBtn, { width: '100%', marginTop: 30 }]} 
+          onPress={error.includes('log in') ? handleLogout : fetchInitialData}
+        >
+          <Text style={styles.parkBtnText}>{error.includes('log in') ? 'LOG IN AGAIN' : 'TRY AGAIN'}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   const userRole = user?.role?.toLowerCase() || 'rider';
   const isStaff = userRole === 'staff' || userRole === 'admin';
@@ -305,6 +339,16 @@ const styles = StyleSheet.create({
   parkBtn: { backgroundColor: Theme.colors.primary, paddingHorizontal: 25, height: 55, borderRadius: 27, justifyContent: 'center', marginTop: 15 },
   parkBtnText: { color: Theme.colors.background, fontWeight: '900', fontSize: 16 },
   emptyText: { textAlign: 'center', marginTop: 50, color: Theme.colors.onSurfaceVariant, fontSize: 16 },
+  errorPulse: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: Theme.colors.error + '15',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: Theme.colors.error + '33'
+  }
 });
 
 export default DashboardScreen;

@@ -10,21 +10,22 @@ const seedData = async () => {
     await mongoose.connect(MONGO_URI);
     console.log('📡 Connected to MongoDB');
 
-    const adminExists = await User.findOne({ email: 'admin@kinetic.io' });
+    const adminExists = await User.findOne({ email: 'akumar@aparna.io' });
     
     if (!adminExists) {
       console.log('⚙️ Creating new admin user object...');
       const admin = new User({
-        name: 'Sri Anna Administrator',
-        email: 'admin@kinetic.io',
+        name: 'kumar',
+        email: 'akumar@aparna.io',
         password: 'admin123',
         role: 'admin',
+        username: 'kumar_owner',
         phone: '9999999999'
       });
       await admin.save();
-      console.log('✅ Default Admin Created: admin@kinetic.io / admin123');
+      console.log('✅ Default Admin Created: akumar@aparna.io / admin123');
     } else {
-      console.log('ℹ️ Admin account already exists (admin@kinetic.io).');
+      console.log('ℹ️ Admin account already exists (akumar@aparna.io).');
     }
 
     const slots = ['A01', 'A02', 'A03', 'A04', 'A05', 'B01', 'B02', 'B03', 'B04', 'B05'];

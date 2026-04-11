@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, Dimensions } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, Dimensions, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { authService } from '../services/api';
 import { User, Lock, Bike, ArrowRight, Apple, Smartphone, Mail, Shield, Eye, EyeOff } from 'lucide-react-native';
 import { Theme } from '../theme';
@@ -7,11 +7,11 @@ import { Theme } from '../theme';
 const { width } = Dimensions.get('window');
 
 const SignUpScreen = ({ navigation }) => {
-  const [name, setName] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('kumar');
+  const [username, setUsername] = useState('kumar_owner');
+  const [email, setEmail] = useState('akumar@aparna.io');
+  const [password, setPassword] = useState('staff123');
+  const [confirmPassword, setConfirmPassword] = useState('staff123');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [role, setRole] = useState('staff');
@@ -67,145 +67,159 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.glowTop} />
+    <KeyboardAvoidingView 
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{ flex: 1 }}
+    >
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.container}>
+          <View style={styles.glowTop} />
 
-      <View style={styles.header}>
-        <View style={styles.brandIcon}>
-          <Bike size={40} color={Theme.colors.primary} />
-          <View style={styles.brandIconBorder} />
-        </View>
-        <Text style={styles.title}>Join SRI APARNA</Text>
-        <Text style={styles.subtitle}>Cycle and Bike Stand Manager</Text>
-      </View>
-
-      <View style={styles.form}>
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>FULL NAME</Text>
-          <View style={styles.inputContainer}>
-            <User size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
-            <TextInput
-              style={styles.input}
-              placeholder="e.g. Arjun Singh"
-              placeholderTextColor={Theme.colors.outline}
-              value={name}
-              onChangeText={setName}
-            />
-          </View>
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>USERNAME (UNIQUE)</Text>
-          <View style={styles.inputContainer}>
-            <User size={20} color={Theme.colors.primary} style={styles.inputIcon} />
-            <TextInput
-              style={styles.input}
-              placeholder="e.g. arjun_hub"
-              placeholderTextColor={Theme.colors.outline}
-              value={username}
-              onChangeText={setUsername}
-              autoCapitalize="none"
-            />
-            {usernameStatus === 'checking' && <ActivityIndicator size="small" color={Theme.colors.primary} />}
-            {usernameStatus === 'available' && <Text style={[styles.statusTag, { color: '#4ADE80' }]}>Available</Text>}
-            {usernameStatus === 'taken' && <Text style={[styles.statusTag, { color: Theme.colors.error }]}>Taken</Text>}
-          </View>
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>EMAIL ADDRESS</Text>
-          <View style={styles.inputContainer}>
-            <Mail size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
-            <TextInput
-              style={styles.input}
-              placeholder="rider@aparna.io"
-              placeholderTextColor={Theme.colors.outline}
-              value={email}
-              onChangeText={setEmail}
-              autoCapitalize="none"
-              keyboardType="email-address"
-            />
-          </View>
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>PHONE NUMBER</Text>
-          <View style={styles.inputContainer}>
-            <Smartphone size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
-            <TextInput
-              style={styles.input}
-              placeholder="+91 99999 99999"
-              placeholderTextColor={Theme.colors.outline}
-              value={phone}
-              onChangeText={setPhone}
-              keyboardType="phone-pad"
-            />
-          </View>
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>PASSWORD</Text>
-          <View style={styles.inputContainer}>
-            <Lock size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
-            <TextInput
-              style={styles.input}
-              placeholder="••••••••"
-              placeholderTextColor={Theme.colors.outline}
-              secureTextEntry={!showPassword}
-              value={password}
-              onChangeText={setPassword}
-            />
-            <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-              {showPassword ? <EyeOff size={20} color={Theme.colors.primary} /> : <Eye size={20} color={Theme.colors.onSurfaceVariant} />}
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.hintText}>* Min 8 characters with at least one number & letter</Text>
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>CONFIRM PASSWORD</Text>
-          <View style={styles.inputContainer}>
-            <Lock size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
-            <TextInput
-              style={styles.input}
-              placeholder="••••••••"
-              placeholderTextColor={Theme.colors.outline}
-              secureTextEntry={!showConfirmPassword}
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-            />
-            <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
-              {showConfirmPassword ? <EyeOff size={20} color={Theme.colors.primary} /> : <Eye size={20} color={Theme.colors.onSurfaceVariant} />}
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        {/* Account Type hidden - defaulting to staff */}
-
-        <TouchableOpacity style={styles.mainButton} onPress={handleSignUp} disabled={loading}>
-          {loading ? (
-            <ActivityIndicator color={Theme.colors.surface} />
-          ) : (
-            <View style={styles.btnContent}>
-              <Text style={styles.mainButtonText}>CREATE ACCOUNT</Text>
-              <ArrowRight size={20} color={Theme.colors.surface} />
+          <View style={styles.header}>
+            <View style={styles.brandIcon}>
+              <Bike size={40} color={Theme.colors.primary} />
+              <View style={styles.brandIconBorder} />
             </View>
-          )}
-        </TouchableOpacity>
-      </View>
+            <Text style={styles.title}>STAFF ACCESS</Text>
+            <Text style={styles.subtitle}>Sri Aparna Management Hub</Text>
+          </View>
 
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Already have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.linkText}>Log In</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+          <View style={styles.form}>
+            {/* Display static role */}
+            <View style={styles.inputWrapper}>
+              <View style={styles.roleTag}>
+                 <Shield size={14} color={Theme.colors.primary} />
+                 <Text style={styles.roleTagText}>OFFICIAL STAFF REGISTRATION</Text>
+              </View>
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <Text style={styles.label}>FULL NAME</Text>
+              <View style={styles.inputContainer}>
+                <User size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.input}
+                  placeholder="e.g. Arjun Singh"
+                  placeholderTextColor={Theme.colors.outline}
+                  value={name}
+                  onChangeText={setName}
+                />
+              </View>
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <Text style={styles.label}>USERNAME (UNIQUE)</Text>
+              <View style={styles.inputContainer}>
+                <User size={20} color={Theme.colors.primary} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.input}
+                  placeholder="e.g. arjun_hub"
+                  placeholderTextColor={Theme.colors.outline}
+                  value={username}
+                  onChangeText={setUsername}
+                  autoCapitalize="none"
+                />
+                {usernameStatus === 'checking' && <ActivityIndicator size="small" color={Theme.colors.primary} />}
+                {usernameStatus === 'available' && <Text style={[styles.statusTag, { color: '#4ADE80' }]}>Available</Text>}
+                {usernameStatus === 'taken' && <Text style={[styles.statusTag, { color: Theme.colors.error }]}>Taken</Text>}
+              </View>
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <Text style={styles.label}>EMAIL ADDRESS</Text>
+              <View style={styles.inputContainer}>
+                <Mail size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.input}
+                  placeholder="rider@aparna.io"
+                  placeholderTextColor={Theme.colors.outline}
+                  value={email}
+                  onChangeText={setEmail}
+                  autoCapitalize="none"
+                  keyboardType="email-address"
+                />
+              </View>
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <Text style={styles.label}>PHONE NUMBER</Text>
+              <View style={styles.inputContainer}>
+                <Smartphone size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.input}
+                  placeholder="+91 99999 99999"
+                  placeholderTextColor={Theme.colors.outline}
+                  value={phone}
+                  onChangeText={setPhone}
+                  keyboardType="phone-pad"
+                />
+              </View>
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <Text style={styles.label}>PASSWORD</Text>
+              <View style={styles.inputContainer}>
+                <Lock size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.input}
+                  placeholder="••••••••"
+                  placeholderTextColor={Theme.colors.outline}
+                  secureTextEntry={!showPassword}
+                  value={password}
+                  onChangeText={setPassword}
+                />
+                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <EyeOff size={20} color={Theme.colors.primary} /> : <Eye size={20} color={Theme.colors.onSurfaceVariant} />}
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.hintText}>* Min 8 characters with at least one number & letter</Text>
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <Text style={styles.label}>CONFIRM PASSWORD</Text>
+              <View style={styles.inputContainer}>
+                <Lock size={20} color={Theme.colors.onSurfaceVariant} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.input}
+                  placeholder="••••••••"
+                  placeholderTextColor={Theme.colors.outline}
+                  secureTextEntry={!showConfirmPassword}
+                  value={confirmPassword}
+                  onChangeText={setConfirmPassword}
+                />
+                <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
+                  {showConfirmPassword ? <EyeOff size={20} color={Theme.colors.primary} /> : <Eye size={20} color={Theme.colors.onSurfaceVariant} />}
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            <TouchableOpacity style={styles.mainButton} onPress={handleSignUp} disabled={loading}>
+              {loading ? (
+                <ActivityIndicator color={Theme.colors.surface} />
+              ) : (
+                <View style={styles.btnContent}>
+                  <Text style={styles.mainButtonText}>CREATE ACCOUNT</Text>
+                  <ArrowRight size={20} color={Theme.colors.surface} />
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Already have an account? </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <Text style={styles.linkText}>Log In</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Theme.colors.background, justifyContent: 'center', padding: 25 },
+  container: { flex: 1, backgroundColor: Theme.colors.background, padding: 25, paddingVertical: 40 },
+  scrollContent: { flexGrow: 1, backgroundColor: Theme.colors.background },
   glowTop: { position: 'absolute', top: -100, right: -100, width: 300, height: 300, backgroundColor: Theme.colors.primary, opacity: 0.05, borderRadius: 150 },
   header: { alignItems: 'center', marginBottom: 40 },
   brandIcon: { width: 80, height: 80, backgroundColor: Theme.colors.surfaceHigh, borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginBottom: 20 },
@@ -231,6 +245,24 @@ const styles = StyleSheet.create({
   roleBtnText: { color: Theme.colors.onSurfaceVariant, fontWeight: '700', fontSize: 13 },
   roleBtnTextActive: { color: Theme.colors.background },
   statusTag: { fontSize: 10, fontWeight: '900', textTransform: 'uppercase', letterSpacing: 1 },
+  roleTag: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    gap: 8, 
+    backgroundColor: Theme.colors.primary + '15', 
+    paddingHorizontal: 15, 
+    paddingVertical: 10, 
+    borderRadius: 12, 
+    borderWidth: 1, 
+    borderColor: Theme.colors.primary + '33',
+    justifyContent: 'center'
+  },
+  roleTagText: { 
+    color: Theme.colors.primary, 
+    fontSize: 10, 
+    fontWeight: '900', 
+    letterSpacing: 1.5 
+  },
 });
 
 export default SignUpScreen;
