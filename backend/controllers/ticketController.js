@@ -97,14 +97,21 @@ const createEntry = async (req, res) => {
     await ticket.save();
     
     // Generate WhatsApp deep link
+    // Sanitize phone number (remove non-digits)
+    let sanitizedPhone = whatsappNumber ? whatsappNumber.replace(/\D/g, '') : '';
+    // If it's 10 digits, prepend 91 (India)
+    if (sanitizedPhone.length === 10) {
+      sanitizedPhone = '91' + sanitizedPhone;
+    }
+
     const message = encodeURIComponent(
       `Your parking ticket is generated.\n` +
       `Ticket ID: ${ticket.ticketId}\n` +
       `Vehicle: ${ticket.vehicleNumber}\n` +
-      `Entry Time: ${new Date(ticket.entryTime).toLocaleTimeString()}\n` +
+      `Entry Time: ${new Date(ticket.issuedAt).toLocaleTimeString()}\n` +
       `Download PDF: ${ticket.pdfUrl}`
     );
-    const whatsappDeepLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+    const whatsappDeepLink = `https://wa.me/${sanitizedPhone}?text=${message}`;
 
     const populatedTicket = await Ticket.findById(ticket._id).populate('createdBy', 'name');
     
@@ -115,10 +122,6 @@ const createEntry = async (req, res) => {
     });
   } catch (err) {
     console.error('Entry Error:', err);
-    const fs = require('fs');
-    const path = require('path');
-    const errorLog = `${new Date().toISOString()} - Entry Error: ${err.message}\n${err.stack}\n`;
-    fs.appendFileSync(path.join(__dirname, '../logs/error_details.txt'), errorLog);
     res.status(500).json({ message: err.message });
   }
 };
