@@ -32,6 +32,13 @@ const QRCode = require('qrcode');
 const createEntry = async (req, res) => {
   try {
     const { vehicleNumber, type, whatsappNumber } = req.body;
+
+    // Check if there is already an active ticket for this vehicle
+    const existingTicket = await Ticket.findOne({ vehicleNumber: vehicleNumber.toUpperCase(), status: 'ACTIVE' });
+    if (existingTicket) {
+      return res.status(400).json({ message: `Vehicle ${vehicleNumber.toUpperCase()} already has an active ticket (${existingTicket.ticketId})` });
+    }
+
     const ticketId = 'TKT' + Math.floor(100000 + Math.random() * 900000);
     const issuedAt = Date.now();
     
@@ -108,6 +115,10 @@ const createEntry = async (req, res) => {
     });
   } catch (err) {
     console.error('Entry Error:', err);
+    const fs = require('fs');
+    const path = require('path');
+    const errorLog = `${new Date().toISOString()} - Entry Error: ${err.message}\n${err.stack}\n`;
+    fs.appendFileSync(path.join(__dirname, '../logs/error_details.txt'), errorLog);
     res.status(500).json({ message: err.message });
   }
 };

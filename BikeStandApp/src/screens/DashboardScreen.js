@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, RefreshControl, ActivityIndicator, Image, Dimensions, Alert, SafeAreaView, StatusBar, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ticketService, authService } from '../services/api';
+import { ticketService, authService, API_URL } from '../services/api';
 import { Bike, Car, LogIn, LogOut, History, Wallet, Map as MapIcon, Shield, BarChart3, ChevronRight, Menu, LayoutDashboard } from 'lucide-react-native';
 import { Theme } from '../theme';
 
@@ -38,7 +38,8 @@ const DashboardScreen = ({ navigation }) => {
       if (err.response?.status === 401) {
         setError('Session expired. Please log in again.');
       } else {
-        setError('Could not connect to server. Please check your network.');
+        const msg = err.message || 'Unknown network error';
+        setError(`Connection Failed: ${msg}\nTarget: ${API_URL}`);
       }
     } finally {
       setLoading(false);

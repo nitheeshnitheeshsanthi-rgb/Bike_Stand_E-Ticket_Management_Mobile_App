@@ -50,7 +50,9 @@ const EntryScreen = ({ navigation }) => {
         navigation.replace('TicketDetail', { ticket });
       }
     } catch (err) {
-      Alert.alert('Entry Failed', err.response?.data?.message || 'Error creating ticket');
+      console.error('Entry Failed Details:', err);
+      const errorMsg = err.response?.data?.message || err.message || 'Unknown Error';
+      Alert.alert('Entry Failed', errorMsg);
     } finally {
       setLoading(false);
     }
